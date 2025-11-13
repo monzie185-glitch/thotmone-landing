@@ -4,38 +4,86 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Thotm One by Blu Pay — Le gardien de votre trésorerie</title>
-  <meta name="description" content="Thotm One by Blu Pay simplifie le recouvrement, la facturation et la gestion du risque client pour une trésorerie saine, durable et maîtrisée." />
-  <meta property="og:title" content="Thotm One — Le gardien de votre trésorerie" />
-  <meta property="og:description" content="Recouvrement, Billing & Factoring, Audit, Solvabilité & Risque — une approche claire, humaine et performante." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="og-image.png" />
-  <meta property="og:url" content="https://thotmone.com/landing" />
-  <link rel="icon" href="favicon.svg" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
+  <style>
+    :root{--green:#2F6B2F;--bg:#0F172A;--bg-soft:#111827;--text:#F9FAFB;--muted:#CBD5E1;}
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;}
+    img{max-width:100%;display:block}
+    .container{width:100%;max-width:1100px;margin:0 auto;padding:0 20px}
+    header{display:flex;align-items:center;justify-content:space-between;padding:18px 0;border-bottom:1px solid rgba(255,255,255,0.06);position:sticky;top:0;background:#020617cc;backdrop-filter:blur(10px);z-index:10}
+    .logo{height:40px;width:auto}
+    nav a{color:var(--muted);text-decoration:none;margin-left:18px;font-size:14px}
+    nav a:hover{color:#fff}
+    .hero{padding:70px 0 40px;text-align:center;position:relative;overflow:hidden}
+    .hero::before{
+      content:"";position:absolute;inset:-20%;
+      background:
+        radial-gradient(45% 35% at 80% 10%, rgba(47,107,47,.28) 0%, rgba(47,107,47,0) 70%),
+        radial-gradient(35% 30% at 10% 90%, rgba(47,107,47,.22) 0%, rgba(47,107,47,0) 70%);
+      z-index:-1;
+    }
+    h1{font-size:2.6rem;line-height:1.05;margin:0 0 14px}
+    @media(min-width:768px){h1{font-size:3.4rem}}
+    .accent{color:var(--green)}
+    .lead{max-width:800px;margin:0 auto 20px;color:var(--muted);font-size:1.05rem}
+    .bullets{display:grid;grid-template-columns:repeat(1,1fr);gap:10px;list-style:none;padding:0;margin:22px auto 0;max-width:540px;color:var(--muted);font-size:0.9rem}
+    @media(min-width:640px){.bullets{grid-template-columns:repeat(3,1fr)}}
+    .section{padding:72px 0;border-top:1px solid rgba(255,255,255,0.06)}
+    .section.soft{background:var(--bg-soft)}
+    .section.darker{background:#020617}
+    h2{margin:0 0 8px}
+    .section-sub{color:var(--muted);margin:0 0 18px}
+    .grid{display:grid;gap:18px}
+    .cards{grid-template-columns:repeat(1,1fr)}
+    @media(min-width:768px){.cards{grid-template-columns:repeat(2,1fr)}}
+    @media(min-width:1024px){.cards{grid-template-columns:repeat(4,1fr)}}
+    .card{background:rgba(15,23,42,0.9);border-radius:18px;padding:18px;border:1px solid rgba(148,163,184,0.25)}
+    .card h3{margin:4px 0 10px}
+    .card ul{margin:0;padding-left:18px;color:var(--muted);font-size:0.9rem}
+    .perks{grid-template-columns:repeat(1,1fr)}
+    @media(min-width:768px){.perks{grid-template-columns:repeat(2,1fr)}}
+    .perk{background:rgba(15,23,42,0.9);border-radius:14px;padding:14px;border:1px solid rgba(148,163,184,0.25);font-size:0.95rem}
+    .offers{grid-template-columns:repeat(1,1fr)}
+    @media(min-width:900px){.offers{grid-template-columns:repeat(3,1fr)}}
+    .offer{background:rgba(15,23,42,0.9);border-radius:18px;padding:18px;border:1px solid rgba(148,163,184,0.25);display:flex;flex-direction:column;gap:10px}
+    .offer.highlight{border-color:rgba(47,107,47,0.6);box-shadow:0 12px 30px rgba(47,107,47,0.25)}
+    .offer p{color:var(--muted);font-size:0.95rem}
+    .btn{display:inline-block;padding:12px 20px;border-radius:16px;text-decoration:none;font-weight:600;font-size:0.95rem;cursor:pointer;border:none}
+    .btn.cta{background:var(--green);color:#fff;box-shadow:0 0 0 0 rgba(47,107,47,0.5);transition:box-shadow .2s ease,transform .06s ease,opacity .2s ease}
+    .btn.cta:hover{opacity:.95;box-shadow:0 0 0 10px rgba(47,107,47,0.18)}
+    .btn.cta:active{transform:translateY(1px)}
+    .btn.ghost{background:transparent;border:1px solid rgba(148,163,184,0.5);color:#fff}
+    .btn.ghost:hover{border-color:rgba(47,107,47,0.7)}
+    .mail{color:#e5e7eb;text-decoration:none}
+    .mail:hover{text-decoration:underline}
+    footer{border-top:1px solid rgba(148,163,184,0.35);padding:24px 0;text-align:center;color:var(--muted);font-size:0.85rem}
+  </style>
 </head>
 <body>
-  <header class="container header reveal">
-    <!-- Mets ton logo optimisé ici -->
-   <img src="logo-thotm-one.jpg" alt="Thotm One by Blu Pay" class="logo" />
-
-
-    <nav class="nav">
-      <a href="#services">Services</a>
-      <a href="#avantages">Avantages</a>
-      <a href="#offres">Offres</a>
-      <a href="#contact">Contact</a>
-    </nav>
+  <header>
+    <div class="container" style="display:flex;align-items:center;justify-content:space-between;">
+      <!-- Logo chargé directement depuis GitHub -->
+      <img src="https://raw.githubusercontent.com/monzie185-glitch/thotmone-landing/main/logo-thotm-one.jpg"
+           alt="Thotm One by Blu Pay" class="logo" />
+      <nav>
+        <a href="#services">Services</a>
+        <a href="#avantages">Avantages</a>
+        <a href="#offres">Offres</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
   </header>
 
   <main>
     <!-- HERO -->
-    <section class="hero with-halo reveal">
-      <div class="container hero-inner">
+    <section class="hero">
+      <div class="container">
         <h1>Maîtrisez vos encaissements.<br><span class="accent">Accélérez votre croissance.</span></h1>
-        <p class="lead">Thotm One by Blu Pay simplifie le recouvrement, l'émission des factures et la gestion du risque client — pour une trésorerie saine, durable et maîtrisée.</p>
-        <a class="btn cta js-open-contact" href="#">Demander une démo</a>
+        <p class="lead">
+          Thotm One by Blu Pay simplifie le recouvrement, l'émission des factures et la gestion du risque client —
+          pour une trésorerie saine, durable et maîtrisée.
+        </p>
+        <a class="btn cta" href="#contact">Demander une démo</a>
         <ul class="bullets">
           <li>Approche courtoise & efficace</li>
           <li>Outils digitaux performants</li>
@@ -45,7 +93,7 @@
     </section>
 
     <!-- SERVICES -->
-    <section id="services" class="section reveal">
+    <section id="services" class="section">
       <div class="container">
         <h2>Nos services</h2>
         <p class="section-sub">Une suite complète pour sécuriser vos paiements et gagner en performance.</p>
@@ -53,21 +101,21 @@
           <article class="card">
             <h3>Recouvrement de créances</h3>
             <ul>
-              <li>Relance amiable & pré-judiciaire</li>
-              <li>Suivi en ligne & transparence</li>
+              <li>Relance amiable &amp; pré-judiciaire</li>
+              <li>Suivi en ligne &amp; transparence</li>
               <li>Préservation de la relation client</li>
             </ul>
           </article>
           <article class="card">
-            <h3>Billing & Factoring</h3>
+            <h3>Billing &amp; Factoring</h3>
             <ul>
-              <li>Émission & relances automatisées</li>
+              <li>Émission &amp; relances automatisées</li>
               <li>Encaissement accéléré</li>
               <li>Intégration à vos outils</li>
             </ul>
           </article>
           <article class="card">
-            <h3>Audit & Formation</h3>
+            <h3>Audit &amp; Formation</h3>
             <ul>
               <li>Diagnostic du poste-client</li>
               <li>Plan d'action opérationnel</li>
@@ -75,10 +123,10 @@
             </ul>
           </article>
           <article class="card">
-            <h3>Solvabilité & Risque</h3>
+            <h3>Solvabilité &amp; Risque</h3>
             <ul>
               <li>Vérification des clients</li>
-              <li>Notation & alertes</li>
+              <li>Notation &amp; alertes</li>
               <li>Décisions éclairées</li>
             </ul>
           </article>
@@ -87,95 +135,59 @@
     </section>
 
     <!-- AVANTAGES -->
-    <section id="avantages" class="section soft reveal">
+    <section id="avantages" class="section soft">
       <div class="container">
         <h2>Pourquoi choisir Thotm One ?</h2>
         <div class="grid perks">
           <div class="perk">Expertise reconnue en credit management</div>
           <div class="perk">Image de marque préservée</div>
           <div class="perk">Accompagnement sur mesure</div>
-          <div class="perk">Résultats concrets & mesurables</div>
+          <div class="perk">Résultats concrets &amp; mesurables</div>
         </div>
       </div>
     </section>
 
     <!-- OFFRES -->
-    <section id="offres" class="section reveal">
+    <section id="offres" class="section">
       <div class="container">
         <h2>Nos offres</h2>
         <div class="grid offers">
           <article class="offer">
             <h3>Thotm Cash</h3>
             <p>Self-service • Accès illimité aux outils • Coût fixe selon CA</p>
-            <a class="btn ghost js-open-contact" href="#">Essayer</a>
+            <a class="btn ghost" href="#contact">Essayer</a>
           </article>
           <article class="offer highlight">
             <h3>Thotm Expert</h3>
             <p>Accompagnement complet • Interlocuteur dédié • Pré-judiciaire</p>
-            <a class="btn cta js-open-contact" href="#">Parler à un expert</a>
+            <a class="btn cta" href="#contact">Parler à un expert</a>
           </article>
           <article class="offer">
-            <h3>Billing & Factoring</h3>
+            <h3>Billing &amp; Factoring</h3>
             <p>Externalisation totale • Intégration comptable • Encaissement accéléré</p>
-            <a class="btn ghost js-open-contact" href="#">Obtenir un devis</a>
+            <a class="btn ghost" href="#contact">Obtenir un devis</a>
           </article>
         </div>
       </div>
     </section>
 
     <!-- CONTACT -->
-    <section id="contact" class="section darker reveal">
+    <section id="contact" class="section darker">
       <div class="container">
         <h2>Parlons trésorerie</h2>
-        <p>15 rue de Châteauroux, 87100 Limoges<br />
-          <a class="mail js-open-contact" href="#">contact@thotmone.com</a></p>
-        <a class="btn cta js-open-contact" href="#">Écrire un email</a>
+        <p>
+          15 rue de Châteauroux, 87100 Limoges<br/>
+          <a class="mail" href="mailto:contact@thotmone.com">contact@thotmone.com</a>
+        </p>
+        <a class="btn cta" href="mailto:contact@thotmone.com">Écrire un email</a>
       </div>
     </section>
   </main>
 
-  <footer class="footer reveal">
+  <footer>
     <div class="container">
-      <p>© <span id="year"></span> Thotm One by Blu Pay. Tous droits réservés.</p>
+      <p>© Thotm One by Blu Pay. Tous droits réservés.</p>
     </div>
   </footer>
-
-  <!-- Contact Modal -->
-  <div id="contact-modal" class="modal" aria-hidden="true">
-    <div class="modal__backdrop js-close-contact" tabindex="-1"></div>
-    <div class="modal__panel" role="dialog" aria-modal="true" aria-labelledby="contact-title">
-      <button class="modal__close js-close-contact" aria-label="Fermer">×</button>
-      <h3 id="contact-title">Contactez Thotm One</h3>
-      <p class="modal__subtitle">Dites-nous vos enjeux, on vous répond vite.</p>
-
-      <!-- Envoi via API interne /api/contact -->
-      <form id="contact-form" action="/api/contact" method="POST" novalidate>
-        <div class="form-row">
-          <label>Nom*</label>
-          <input type="text" name="name" required placeholder="Votre nom">
-        </div>
-        <div class="form-row">
-          <label>Email*</label>
-          <input type="email" name="email" required placeholder="vous@entreprise.com">
-        </div>
-        <div class="form-row">
-          <label>Entreprise</label>
-          <input type="text" name="company" placeholder="Nom de l’entreprise">
-        </div>
-        <div class="form-row">
-          <label>Message*</label>
-          <textarea name="message" rows="5" required placeholder="Votre besoin / vos questions"></textarea>
-        </div>
-        <input type="hidden" name="subject" value="Nouveau message — Thotm One (landing)">
-        <div class="form-actions">
-          <button type="submit" class="btn cta">Envoyer</button>
-          <button type="button" class="btn ghost js-close-contact">Annuler</button>
-        </div>
-        <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
-      </form>
-    </div>
-  </div>
-
-  <script src="script.js"></script>
 </body>
 </html>
