@@ -10,8 +10,8 @@
     html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;}
     img{max-width:100%;display:block}
     .container{width:100%;max-width:1100px;margin:0 auto;padding:0 20px}
-    header{display:flex;align-items:center;justify-content:space-between;padding:18px 0;border-bottom:1px solid rgba(255,255,255,0.06);position:sticky;top:0;background:#020617cc;backdrop-filter:blur(10px);z-index:10}
-    .logo{height:40px;width:auto}
+    header{display:flex;align-items:center;justify-content:space-between;padding:18px 0;border-bottom:1px solid rgba(255,255,255,0.06);background:#020617cc;backdrop-filter:blur(10px);position:sticky;top:0;z-index:10}
+    .logo{height:42px;width:auto}
     nav a{color:var(--muted);text-decoration:none;margin-left:18px;font-size:14px}
     nav a:hover{color:#fff}
     .hero{padding:70px 0 40px;text-align:center;position:relative;overflow:hidden}
@@ -60,11 +60,12 @@
   </style>
 </head>
 <body>
+
+  <!-- HEADER -->
   <header>
     <div class="container" style="display:flex;align-items:center;justify-content:space-between;">
-      <!-- Logo chargé directement depuis GitHub -->
-      <img src="https://raw.githubusercontent.com/monzie185-glitch/thotmone-landing/main/logo-thotm-one.jpg"
-           alt="Thotm One by Blu Pay" class="logo" />
+      <!-- TON LOGO fonctionne à cette adresse -->
+      <img src="/logo-thotm-one.jpg" alt="Thotm One by Blu Pay" class="logo" />
       <nav>
         <a href="#services">Services</a>
         <a href="#avantages">Avantages</a>
@@ -74,8 +75,8 @@
     </div>
   </header>
 
+  <!-- HERO -->
   <main>
-    <!-- HERO -->
     <section class="hero">
       <div class="container">
         <h1>Maîtrisez vos encaissements.<br><span class="accent">Accélérez votre croissance.</span></h1>
@@ -101,21 +102,21 @@
           <article class="card">
             <h3>Recouvrement de créances</h3>
             <ul>
-              <li>Relance amiable &amp; pré-judiciaire</li>
-              <li>Suivi en ligne &amp; transparence</li>
+              <li>Relance amiable & pré-judiciaire</li>
+              <li>Suivi en ligne & transparence</li>
               <li>Préservation de la relation client</li>
             </ul>
           </article>
           <article class="card">
-            <h3>Billing &amp; Factoring</h3>
+            <h3>Billing & Factoring</h3>
             <ul>
-              <li>Émission &amp; relances automatisées</li>
+              <li>Émission & relances automatisées</li>
               <li>Encaissement accéléré</li>
               <li>Intégration à vos outils</li>
             </ul>
           </article>
           <article class="card">
-            <h3>Audit &amp; Formation</h3>
+            <h3>Audit & Formation</h3>
             <ul>
               <li>Diagnostic du poste-client</li>
               <li>Plan d'action opérationnel</li>
@@ -123,10 +124,10 @@
             </ul>
           </article>
           <article class="card">
-            <h3>Solvabilité &amp; Risque</h3>
+            <h3>Solvabilité & Risque</h3>
             <ul>
               <li>Vérification des clients</li>
-              <li>Notation &amp; alertes</li>
+              <li>Notation & alertes</li>
               <li>Décisions éclairées</li>
             </ul>
           </article>
@@ -142,7 +143,7 @@
           <div class="perk">Expertise reconnue en credit management</div>
           <div class="perk">Image de marque préservée</div>
           <div class="perk">Accompagnement sur mesure</div>
-          <div class="perk">Résultats concrets &amp; mesurables</div>
+          <div class="perk">Résultats concrets & mesurables</div>
         </div>
       </div>
     </section>
@@ -163,7 +164,7 @@
             <a class="btn cta" href="#contact">Parler à un expert</a>
           </article>
           <article class="offer">
-            <h3>Billing &amp; Factoring</h3>
+            <h3>Billing & Factoring</h3>
             <p>Externalisation totale • Intégration comptable • Encaissement accéléré</p>
             <a class="btn ghost" href="#contact">Obtenir un devis</a>
           </article>
@@ -184,10 +185,12 @@
     </section>
   </main>
 
+  <!-- FOOTER -->
   <footer>
     <div class="container">
       <p>© Thotm One by Blu Pay. Tous droits réservés.</p>
     </div>
   </footer>
+
 </body>
 </html>
