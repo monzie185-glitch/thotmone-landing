@@ -44,9 +44,8 @@
     @media(min-width:768px){.perks{grid-template-columns:repeat(2,1fr)}}
     .perk{background:rgba(15,23,42,0.9);border-radius:14px;padding:14px;border:1px solid rgba(148,163,184,0.25);font-size:0.95rem}
     .offers{grid-template-columns:repeat(1,1fr)}
-    @media(min-width:900px){.offers{grid-template-columns:repeat(3,1fr)}}
+    @media(min-width:900px){.offers{grid-template-columns:repeat(1,1fr)}}
     .offer{background:rgba(15,23,42,0.9);border-radius:18px;padding:18px;border:1px solid rgba(148,163,184,0.25);display:flex;flex-direction:column;gap:10px}
-    .offer.highlight{border-color:rgba(47,107,47,0.6);box-shadow:0 12px 30px rgba(47,107,47,0.25)}
     .offer p{color:var(--muted);font-size:0.95rem}
     .btn{display:inline-block;padding:12px 20px;border-radius:16px;text-decoration:none;font-weight:600;font-size:0.95rem;cursor:pointer;border:none}
     .btn.cta{background:var(--green);color:#fff;box-shadow:0 0 0 0 rgba(47,107,47,0.5);transition:box-shadow .2s ease,transform .06s ease,opacity .2s ease}
@@ -57,109 +56,83 @@
     .mail{color:#e5e7eb;text-decoration:none}
     .mail:hover{text-decoration:underline}
     footer{border-top:1px solid rgba(148,163,184,0.35);padding:24px 0;text-align:center;color:var(--muted);font-size:0.85rem}
+
+    /* Formulaire de souscription (overlay) */
+    .hidden{display:none}
+    .form-souscription{
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,0.75);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      z-index:9999;
+    }
+    .form-souscription-inner{
+      background:#020617;
+      border-radius:16px;
+      padding:24px 28px;
+      max-width:520px;
+      width:90%;
+      color:#f9fafb;
+      box-shadow:0 20px 60px rgba(0,0,0,0.6);
+      position:relative;
+      border:1px solid rgba(148,163,184,0.4);
+    }
+    .form-souscription-inner h2{
+      margin-top:0;
+      margin-bottom:12px;
+    }
+    .form-souscription-inner h3{
+      margin-top:16px;
+      margin-bottom:8px;
+      font-size:1rem;
+    }
+    .form-souscription-inner label{
+      display:block;
+      margin-top:10px;
+      font-size:0.9rem;
+    }
+    .form-souscription-inner input,
+    .form-souscription-inner select{
+      width:100%;
+      padding:8px 10px;
+      margin-top:4px;
+      border-radius:6px;
+      border:1px solid #334155;
+      background:#020617;
+      color:#e5e7eb;
+    }
+    .form-souscription-inner p{
+      font-size:0.9rem;
+      color:var(--muted);
+    }
+    .form-souscription-inner button.btn-primary{
+      margin-top:18px;
+      width:100%;
+    }
+    .close-souscription{
+      position:absolute;
+      top:8px;
+      right:12px;
+      background:transparent;
+      border:none;
+      color:#e5e7eb;
+      font-size:20px;
+      cursor:pointer;
+    }
   </style>
 </head>
 <body>
-<a href="mailto:contact@thotmone.com">
-    <button style="
-        background:#d4a037;
-        color:white;
-        padding:12px 25px;
-        border:none;
-        border-radius:6px;
-        font-size:16px;
-        cursor:pointer;
-    ">
-        JE VEUX EN SAVOIR PLUS
-    </button>
-</a>
-<a href="mailto:contact@thotmone.com">
-    <button style="
-        background:#d4a037;
-        color:white;
-        padding:12px 25px;
-        border:none;
-        border-radius:6px;
-        font-size:16px;
-        cursor:pointer;
-    ">
-        JE VEUX EN SAVOIR PLUS
-    </button>
-</a>
-<form action="mailto:contact@thotmone.com" method="POST" enctype="text/plain" style="max-width:600px;margin:auto;font-family:Arial;">
-    <h2>Formulaire de Souscription – THOTM ONE</h2>
-
-    <h3>Informations sur l’entreprise</h3>
-    <label>Raison sociale :</label>
-    <input type="text" name="Raison sociale" required style="width:100%;padding:8px;margin-bottom:10px;">
-<a href="mailto:contact@thotmone.com">
-  <button style="background:#d4a037;color:white;padding:12px 25px;border:none;border-radius:6px;font-size:16px;cursor:pointer;">
-    JE VEUX EN SAVOIR PLUS
-  </button>
-</a>
-<a href="mailto:contact@thotmone.com">
-  <button style="background:#d4a037;color:white;padding:12px 25px;border:none;border-radius:6px;font-size:16px;cursor:pointer;">
-    JE VEUX EN SAVOIR PLUS
-  </button>
-</a>
-
-    <label>Forme juridique :</label>
-    <select name="Forme juridique" style="width:100%;padding:8px;margin-bottom:10px;">
-        <option>EI</option>
-        <option>SARL</option>
-        <option>SAS</option>
-        <option>SASU</option>
-        <option>EURL</option>
-        <option>Autre</option>
-    </select>
-
-    <label>SIRET :</label>
-    <input type="text" name="SIRET" style="width:100%;padding:8px;margin-bottom:10px;">
-
-    <label>Adresse :</label>
-    <input type="text" name="Adresse" style="width:100%;padding:8px;margin-bottom:10px;">
-
-    <label>Code postal :</label>
-    <input type="text" name="Code postal" style="width:100%;padding:8px;margin-bottom:10px;">
-
-    <label>Ville :</label>
-    <input type="text" name="Ville" style="width:100%;padding:8px;margin-bottom:10px;">
-
-    <label>Email :</label>
-    <input type="email" name="Email" required style="width:100%;padding:8px;margin-bottom:10px;">
-
-    <label>Téléphone :</label>
-    <input type="text" name="Téléphone" style="width:100%;padding:8px;margin-bottom:10px;">
-
-
-    <h3>Offre THOTM ONE</h3>
-    <p>Abonnement : <strong>200 € HT / mois</strong> – Engagement : <strong>12 mois</strong></p>
-
-    <label>Date souhaitée de début :</label>
-    <input type="date" name="Début abonnement" style="width:100%;padding:8px;margin-bottom:10px;">
-
-
-    <h3>Validation</h3>
-    <label>
-        <input type="checkbox" name="Acceptation" required>
-        J’accepte les conditions générales et l’engagement de 12 mois.
-    </label>
-
-    <br><br>
-    <button type="submit" style="background:#d4a037;color:white;padding:12px 20px;border:none;width:100%;font-size:16px;cursor:pointer;">
-        Envoyer ma souscription
-    </button>
-</form>
 
   <!-- HEADER -->
   <header>
     <div class="container" style="display:flex;align-items:center;justify-content:space-between;">
-      <!-- TON LOGO fonctionne à cette adresse -->
       <img src="/logo-thotm-one.jpg" alt="Thotm One by Blu Pay" class="logo" />
       <nav>
         <a href="#services">Services</a>
         <a href="#avantages">Avantages</a>
-        <a href="#offres">Offres</a>
+        <a href="#offres">Mon offre</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
@@ -174,7 +147,8 @@
           Thotm One by Blu Pay simplifie le recouvrement, l'émission des factures et la gestion du risque client —
           pour une trésorerie saine, durable et maîtrisée.
         </p>
-        <a class="btn cta" href="#contact">Demander une démo</a>
+        <!-- CTA HERO => SOUSCRIRE + ouverture du formulaire -->
+        <button class="btn cta btn-souscrire">Souscrire</button>
         <ul class="bullets">
           <li>Approche courtoise & efficace</li>
           <li>Outils digitaux performants</li>
@@ -238,26 +212,39 @@
       </div>
     </section>
 
-    <!-- OFFRES -->
+    <!-- MON OFFRE -->
     <section id="offres" class="section">
       <div class="container">
-        <h2>Nos offres</h2>
-        <div class="grid offers">
-          <article class="offer">
-            <h3>Thotm Cash</h3>
-            <p>Self-service • Accès illimité aux outils • Coût fixe selon CA</p>
-            <a class="btn ghost" href="#contact">Essayer</a>
-          </article>
-          <article class="offer highlight">
-            <h3>Thotm Expert</h3>
-            <p>Accompagnement complet • Interlocuteur dédié • Pré-judiciaire</p>
-            <a class="btn cta" href="#contact">Parler à un expert</a>
-          </article>
-          <article class="offer">
-            <h3>Billing & Factoring</h3>
-            <p>Externalisation totale • Intégration comptable • Encaissement accéléré</p>
-            <a class="btn ghost" href="#contact">Obtenir un devis</a>
-          </article>
+        <h2>Mon offre</h2>
+        <div class="offer">
+          <p>🚀 <strong>THOTM ONE – Optimisez votre trésorerie. Simplifiez votre recouvrement.</strong></p>
+
+          <p>
+            Dirigeants de <strong>TPE / PME / Artisans / Indépendants</strong>,<br>
+            vos impayés pèsent sur votre trésorerie ?
+          </p>
+
+          <p>
+            ➡️ <strong>Thotm One</strong> met à votre disposition un <strong>Credit Manager dédié</strong>, expert en recouvrement et en optimisation financière.<br>
+            Il vous accompagne chaque mois pour :
+          </p>
+
+          <ul>
+            <li>✅ Récupérer vos impayés plus vite</li>
+            <li>✅ Mettre en place les bons réflexes de gestion</li>
+            <li>✅ Libérer votre trésorerie</li>
+          </ul>
+
+          <p>
+            💼 <strong>Abonnement : 200 € TTC / mois</strong><br>
+            📅 <strong>Engagement : 12 mois</strong><br>
+            🤝 <strong>Un service humain, réactif et 100% clé en main</strong>
+          </p>
+
+          <p>🔗 Rejoignez les entreprises qui reprennent le contrôle de leur trésorerie dès aujourd’hui !</p>
+
+          <!-- CTA SOUSCRIRE -->
+          <button class="btn cta btn-souscrire">Souscrire</button>
         </div>
       </div>
     </section>
@@ -270,10 +257,62 @@
           15 rue de Châteauroux, 87100 Limoges<br/>
           <a class="mail" href="mailto:contact@thotmone.com">contact@thotmone.com</a>
         </p>
-        <a class="btn cta" href="mailto:contact@thotmone.com">Écrire un email</a>
+        <a class="btn ghost" href="mailto:contact@thotmone.com">Écrire un email</a>
       </div>
     </section>
   </main>
+
+  <!-- OVERLAY FORMULAIRE DE SOUSCRIPTION -->
+  <div id="form-souscription-wrapper" class="form-souscription hidden">
+    <div class="form-souscription-inner">
+      <button class="close-souscription" aria-label="Fermer le formulaire">×</button>
+      <h2>Souscription – THOTM ONE</h2>
+
+      <form id="form-souscription" action="mailto:contact@thotmone.com" method="POST" enctype="text/plain">
+        <h3>Informations sur l’entreprise</h3>
+
+        <label>Raison sociale :</label>
+        <input type="text" name="Raison sociale" required>
+
+        <label>Forme juridique :</label>
+        <input type="text" name="Forme juridique">
+
+        <label>SIRET :</label>
+        <input type="text" name="SIRET">
+
+        <label>Adresse :</label>
+        <input type="text" name="Adresse">
+
+        <label>Code postal :</label>
+        <input type="text" name="Code postal">
+
+        <label>Ville :</label>
+        <input type="text" name="Ville">
+
+        <label>Email :</label>
+        <input type="email" name="Email" required>
+
+        <label>Téléphone :</label>
+        <input type="text" name="Téléphone">
+
+        <h3>Offre THOTM ONE</h3>
+        <p>Abonnement : <strong>200 € HT / mois</strong> – Engagement : <strong>12 mois</strong></p>
+
+        <label>Date souhaitée de début :</label>
+        <input type="date" name="Début abonnement">
+
+        <h3>Validation</h3>
+        <label>
+          <input type="checkbox" name="Acceptation" required>
+          J’accepte les conditions générales et l’engagement de 12 mois.
+        </label>
+
+        <button type="submit" class="btn cta btn-primary">
+          Envoyer ma souscription
+        </button>
+      </form>
+    </div>
+  </div>
 
   <!-- FOOTER -->
   <footer>
@@ -282,5 +321,34 @@
     </div>
   </footer>
 
+  <!-- SCRIPT OUVERTURE / FERMETURE FORMULAIRE -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const souscrireButtons = document.querySelectorAll('.btn-souscrire');
+      const formWrapper = document.getElementById('form-souscription-wrapper');
+      const closeBtn = document.querySelector('.close-souscription');
+
+      if (souscrireButtons && formWrapper) {
+        souscrireButtons.forEach(function (btn) {
+          btn.addEventListener('click', function (e) {
+            e.preventDefault();
+            formWrapper.classList.remove('hidden');
+          });
+        });
+      }
+
+      if (closeBtn && formWrapper) {
+        closeBtn.addEventListener('click', function () {
+          formWrapper.classList.add('hidden');
+        });
+
+        formWrapper.addEventListener('click', function (e) {
+          if (e.target === formWrapper) {
+            formWrapper.classList.add('hidden');
+          }
+        });
+      }
+    });
+  </script>
 </body>
 </html>
