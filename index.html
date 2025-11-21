@@ -4,61 +4,273 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Thotm One by Blu Pay — Le gardien de votre trésorerie</title>
+
   <style>
-    :root{--green:#2F6B2F;--bg:#0F172A;--bg-soft:#111827;--text:#F9FAFB;--muted:#CBD5E1;}
+    :root{
+      --green:#2F6B2F;
+      --bg:#0F172A;
+      --bg-soft:#111827;
+      --text:#F9FAFB;
+      --muted:#CBD5E1;
+    }
+
     *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;}
-    img{max-width:100%;display:block}
-    .container{width:100%;max-width:1100px;margin:0 auto;padding:0 20px}
-    header{display:flex;align-items:center;justify-content:space-between;padding:18px 0;border-bottom:1px solid rgba(255,255,255,0.06);background:#020617cc;backdrop-filter:blur(10px);position:sticky;top:0;z-index:10}
-    .logo{height:42px;width:auto}
-    nav a{color:var(--muted);text-decoration:none;margin-left:18px;font-size:14px}
-    nav a:hover{color:#fff}
-    .hero{padding:70px 0 40px;text-align:center;position:relative;overflow:hidden}
+
+    html,body{
+      margin:0;
+      padding:0;
+      background:var(--bg);
+      color:var(--text);
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+    }
+
+    img{
+      max-width:100%;
+      display:block;
+    }
+
+    .container{
+      width:100%;
+      max-width:1100px;
+      margin:0 auto;
+      padding:0 20px;
+    }
+
+    header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:18px 0;
+      border-bottom:1px solid rgba(255,255,255,0.06);
+      background:#020617cc;
+      backdrop-filter:blur(10px);
+      position:sticky;
+      top:0;
+      z-index:10;
+    }
+
+    .logo{
+      height:42px;
+      width:auto;
+    }
+
+    nav a{
+      color:var(--muted);
+      text-decoration:none;
+      margin-left:18px;
+      font-size:14px;
+    }
+
+    nav a:hover{
+      color:#fff;
+    }
+
+    .hero{
+      padding:70px 0 40px;
+      text-align:center;
+      position:relative;
+      overflow:hidden;
+    }
+
     .hero::before{
-      content:"";position:absolute;inset:-20%;
+      content:"";
+      position:absolute;
+      inset:-20%;
       background:
         radial-gradient(45% 35% at 80% 10%, rgba(47,107,47,.28) 0%, rgba(47,107,47,0) 70%),
         radial-gradient(35% 30% at 10% 90%, rgba(47,107,47,.22) 0%, rgba(47,107,47,0) 70%);
       z-index:-1;
     }
-    h1{font-size:2.6rem;line-height:1.05;margin:0 0 14px}
-    @media(min-width:768px){h1{font-size:3.4rem}}
-    .accent{color:var(--green)}
-    .lead{max-width:800px;margin:0 auto 20px;color:var(--muted);font-size:1.05rem}
-    .bullets{display:grid;grid-template-columns:repeat(1,1fr);gap:10px;list-style:none;padding:0;margin:22px auto 0;max-width:540px;color:var(--muted);font-size:0.9rem}
-    @media(min-width:640px){.bullets{grid-template-columns:repeat(3,1fr)}}
-    .section{padding:72px 0;border-top:1px solid rgba(255,255,255,0.06)}
-    .section.soft{background:var(--bg-soft)}
-    .section.darker{background:#020617}
-    h2{margin:0 0 8px}
-    .section-sub{color:var(--muted);margin:0 0 18px}
-    .grid{display:grid;gap:18px}
-    .cards{grid-template-columns:repeat(1,1fr)}
-    @media(min-width:768px){.cards{grid-template-columns:repeat(2,1fr)}}
-    @media(min-width:1024px){.cards{grid-template-columns:repeat(4,1fr)}}
-    .card{background:rgba(15,23,42,0.9);border-radius:18px;padding:18px;border:1px solid rgba(148,163,184,0.25)}
-    .card h3{margin:4px 0 10px}
-    .card ul{margin:0;padding-left:18px;color:var(--muted);font-size:0.9rem}
-    .perks{grid-template-columns:repeat(1,1fr)}
-    @media(min-width:768px){.perks{grid-template-columns:repeat(2,1fr)}}
-    .perk{background:rgba(15,23,42,0.9);border-radius:14px;padding:14px;border:1px solid rgba(148,163,184,0.25);font-size:0.95rem}
-    .offers{grid-template-columns:repeat(1,1fr)}
-    @media(min-width:900px){.offers{grid-template-columns:repeat(1,1fr)}}
-    .offer{background:rgba(15,23,42,0.9);border-radius:18px;padding:18px;border:1px solid rgba(148,163,184,0.25);display:flex;flex-direction:column;gap:10px}
-    .offer p{color:var(--muted);font-size:0.95rem}
-    .btn{display:inline-block;padding:12px 20px;border-radius:16px;text-decoration:none;font-weight:600;font-size:0.95rem;cursor:pointer;border:none}
-    .btn.cta{background:var(--green);color:#fff;box-shadow:0 0 0 0 rgba(47,107,47,0.5);transition:box-shadow .2s ease,transform .06s ease,opacity .2s ease}
-    .btn.cta:hover{opacity:.95;box-shadow:0 0 0 10px rgba(47,107,47,0.18)}
-    .btn.cta:active{transform:translateY(1px)}
-    .btn.ghost{background:transparent;border:1px solid rgba(148,163,184,0.5);color:#fff}
-    .btn.ghost:hover{border-color:rgba(47,107,47,0.7)}
-    .mail{color:#e5e7eb;text-decoration:none}
-    .mail:hover{text-decoration:underline}
-    footer{border-top:1px solid rgba(148,163,184,0.35);padding:24px 0;text-align:center;color:var(--muted);font-size:0.85rem}
 
-    /* Formulaire de souscription (overlay) */
-    .hidden{display:none}
+    h1{
+      font-size:2.6rem;
+      line-height:1.05;
+      margin:0 0 14px;
+    }
+
+    @media(min-width:768px){
+      h1{font-size:3.4rem;}
+    }
+
+    .accent{
+      color:var(--green);
+    }
+
+    .lead{
+      max-width:800px;
+      margin:0 auto 20px;
+      color:var(--muted);
+      font-size:1.05rem;
+    }
+
+    .bullets{
+      display:grid;
+      grid-template-columns:repeat(1,1fr);
+      gap:10px;
+      list-style:none;
+      padding:0;
+      margin:22px auto 0;
+      max-width:540px;
+      color:var(--muted);
+      font-size:0.9rem;
+    }
+
+    @media(min-width:640px){
+      .bullets{grid-template-columns:repeat(3,1fr);}
+    }
+
+    .section{
+      padding:72px 0;
+      border-top:1px solid rgba(255,255,255,0.06);
+    }
+
+    .section.soft{
+      background:var(--bg-soft);
+    }
+
+    .section.darker{
+      background:#020617;
+    }
+
+    h2{
+      margin:0 0 8px;
+    }
+
+    .section-sub{
+      color:var(--muted);
+      margin:0 0 18px;
+    }
+
+    .grid{
+      display:grid;
+      gap:18px;
+    }
+
+    .cards{
+      grid-template-columns:repeat(1,1fr);
+    }
+
+    @media(min-width:768px){
+      .cards{grid-template-columns:repeat(2,1fr);}
+    }
+
+    @media(min-width:1024px){
+      .cards{grid-template-columns:repeat(4,1fr);}
+    }
+
+    .card{
+      background:rgba(15,23,42,0.9);
+      border-radius:18px;
+      padding:18px;
+      border:1px solid rgba(148,163,184,0.25);
+    }
+
+    .card h3{
+      margin:4px 0 10px;
+    }
+
+    .card ul{
+      margin:0;
+      padding-left:18px;
+      color:var(--muted);
+      font-size:0.9rem;
+    }
+
+    .perks{
+      grid-template-columns:repeat(1,1fr);
+    }
+
+    @media(min-width:768px){
+      .perks{grid-template-columns:repeat(2,1fr);}
+    }
+
+    .perk{
+      background:rgba(15,23,42,0.9);
+      border-radius:14px;
+      padding:14px;
+      border:1px solid rgba(148,163,184,0.25);
+      font-size:0.95rem;
+    }
+
+    .offers{
+      grid-template-columns:repeat(1,1fr);
+    }
+
+    .offer{
+      background:rgba(15,23,42,0.9);
+      border-radius:18px;
+      padding:18px;
+      border:1px solid rgba(148,163,184,0.25);
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+
+    .offer p{
+      color:var(--muted);
+      font-size:0.95rem;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:12px 20px;
+      border-radius:16px;
+      text-decoration:none;
+      font-weight:600;
+      font-size:0.95rem;
+      cursor:pointer;
+      border:none;
+    }
+
+    .btn.cta{
+      background:var(--green);
+      color:#fff;
+      box-shadow:0 0 0 0 rgba(47,107,47,0.5);
+      transition:box-shadow .2s ease,transform .06s ease,opacity .2s ease;
+    }
+
+    .btn.cta:hover{
+      opacity:.95;
+      box-shadow:0 0 0 10px rgba(47,107,47,0.18);
+    }
+
+    .btn.cta:active{
+      transform:translateY(1px);
+    }
+
+    .btn.ghost{
+      background:transparent;
+      border:1px solid rgba(148,163,184,0.5);
+      color:#fff;
+    }
+
+    .btn.ghost:hover{
+      border-color:rgba(47,107,47,0.7);
+    }
+
+    .mail{
+      color:#e5e7eb;
+      text-decoration:none;
+    }
+
+    .mail:hover{
+      text-decoration:underline;
+    }
+
+    footer{
+      border-top:1px solid rgba(148,163,184,0.35);
+      padding:24px 0;
+      text-align:center;
+      color:var(--muted);
+      font-size:0.85rem;
+    }
+
+    /* ---------- FORMULAIRE DE SOUSCRIPTION (OVERLAY) ---------- */
+
+    .hidden{
+      display:none;
+    }
+
     .form-souscription{
       position:fixed;
       inset:0;
@@ -68,6 +280,11 @@
       justify-content:center;
       z-index:9999;
     }
+
+    .form-souscription.hidden{
+      display:none;
+    }
+
     .form-souscription-inner{
       background:#020617;
       border-radius:16px;
@@ -79,20 +296,24 @@
       position:relative;
       border:1px solid rgba(148,163,184,0.4);
     }
+
     .form-souscription-inner h2{
       margin-top:0;
       margin-bottom:12px;
     }
+
     .form-souscription-inner h3{
       margin-top:16px;
       margin-bottom:8px;
       font-size:1rem;
     }
+
     .form-souscription-inner label{
       display:block;
       margin-top:10px;
       font-size:0.9rem;
     }
+
     .form-souscription-inner input,
     .form-souscription-inner select{
       width:100%;
@@ -103,14 +324,17 @@
       background:#020617;
       color:#e5e7eb;
     }
+
     .form-souscription-inner p{
       font-size:0.9rem;
       color:var(--muted);
     }
+
     .form-souscription-inner button.btn-primary{
       margin-top:18px;
       width:100%;
     }
+
     .close-souscription{
       position:absolute;
       top:8px;
@@ -123,6 +347,7 @@
     }
   </style>
 </head>
+
 <body>
 
   <!-- HEADER -->
@@ -147,7 +372,6 @@
           Thotm One by Blu Pay simplifie le recouvrement, l'émission des factures et la gestion du risque client —
           pour une trésorerie saine, durable et maîtrisée.
         </p>
-        <!-- CTA HERO => SOUSCRIRE + ouverture du formulaire -->
         <button class="btn cta btn-souscrire">Souscrire</button>
         <ul class="bullets">
           <li>Approche courtoise & efficace</li>
@@ -243,7 +467,6 @@
 
           <p>🔗 Rejoignez les entreprises qui reprennent le contrôle de leur trésorerie dès aujourd’hui !</p>
 
-          <!-- CTA SOUSCRIRE -->
           <button class="btn cta btn-souscrire">Souscrire</button>
         </div>
       </div>
@@ -262,7 +485,7 @@
     </section>
   </main>
 
-  <!-- OVERLAY FORMULAIRE DE SOUSCRIPTION -->
+  <!-- OVERLAY FORMULAIRE DE SOUSCRIPTION (CACHÉ PAR DÉFAUT) -->
   <div id="form-souscription-wrapper" class="form-souscription hidden">
     <div class="form-souscription-inner">
       <button class="close-souscription" aria-label="Fermer le formulaire">×</button>
